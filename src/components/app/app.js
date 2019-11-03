@@ -91,19 +91,21 @@ export default class App extends Component {
         const todoCount = todoData.length - doneCount;
         return (
             <div>
+                
                 <AppHeader toDo={todoCount} done={doneCount} />
+                
                 <div className="top-panel d-flex">
-                    <SearchPanel />
+                    <SearchPanel />                    
                     <ItemStatusFilter />
                 </div>
-      
+                <ItemAddForm onItemAdded={ this.addItem } />
                 <TodoList 
                   todos={todoData}
                   onDeleted={ this.deleteItem }
                   onToggleDone={ this.onToggleDone }
                   onToggleImportant={ this.onToggleImportant }
                  />
-                <ItemAddForm onItemAdded={ this.addItem } />
+                
             </div>
         )
     }  
